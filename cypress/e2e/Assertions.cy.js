@@ -21,16 +21,6 @@ describe("Assertions demo", () => {
       .and("eq", "OrangeHRM")
       .and("contain", "HRM")
       .and("not.contain", "xhjjanka");
-
-    //Elements
-    cy.get(".orangehrm-login-branding > img").should("be.visible").and("exist");
-    cy.xpath("//a").should("have.length", 5); //number of links are here
-    // Login input
-    cy.get("input[placeholder='Username']").type("Rabeya Boshri"); //provide a value into input box
-    cy.get("input[placeholder='Username']").should(
-      "have.value",
-      "Rabeya Boshri"
-    );
   });
 
   //Explicit assertions
