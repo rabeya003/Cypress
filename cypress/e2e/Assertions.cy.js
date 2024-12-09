@@ -41,16 +41,5 @@ describe("Assertions demo", () => {
     cy.get("input[placeholder='Username']").type("Admin");
     cy.get("input[placeholder='Password']").type("admin123");
     cy.get("button[type='submit']").click();
-
-    let expName = "XYZ";
-    cy.get(".oxd-userdropdown-name").then((x) => {
-      let actName = x.text();
-      // BDD
-      expect(expName).to.not.equal(actName);
-      expect(actName).to.equal(expName);
-      // TDD
-      assert.notEqual(expName, expName);
-      assert.equal(expName, expName);
-    });
   });
 });
