@@ -4,7 +4,7 @@ it("Checking Radio Buttons", () => {
   cy.get("input[value='Male']").should("be.visible");
   cy.get("input[value='Male']").check().should("be.checked");
 });
-it("Checkmg Radio Buttons", () => {
+it("Checking Checkbox is properly working or not", () => {
   cy.visit("https://demo.automationtesting.in/Register.html");
   cy.get("#checkbox1").should("be.visible");
   cy.get("#checkbox1").check().should("be.checked");
