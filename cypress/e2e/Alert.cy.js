@@ -37,4 +37,18 @@ describe("Alerts", () => {
     cy.on("window:confirm", () => false); //cancle
     cy.get("#result").should("have.text", "You clicked: Cancel");
   });
+
+  //3) Javascript Prompt Alert:It will have some text with a text box for user input along with 'ok'
+  it("Js alert Prompt", () => {
+    cy.visit("https://the-internet.herokuapp.com/javascript_alerts");
+
+    cy.window().then((win) => {
+      cy.stub(win, "prompt").returns("welcome");
+    });
+
+    cy.get("button[onclick='jsPrompt()']").click();
+    // Cypress will atomatically close prompted alert-it will use Ok button-By_default
+    // cy.on("window:confirm", () => false); //cancle
+    cy.get("#result").should("have.text", "You entered: welcome");
+  });
 });
