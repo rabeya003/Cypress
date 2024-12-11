@@ -17,5 +17,12 @@ describe("Alerts", () => {
   it("Js Confirm alert-OK", () => {
     cy.visit("https://the-internet.herokuapp.com/javascript_alerts");
     cy.get("button[onclick='jsConfirm()']").click();
+
+    cy.on("window:confirm", (t) => {
+      expect(t).to.contain("I am a JS Confirm");
+    });
+
+    // Cypress automatically closed alert window by using 'ok' button default
+    cy.get("#result").should("have.text", "You clicked: Ok");
   });
 });
