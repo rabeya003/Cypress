@@ -61,5 +61,9 @@ describe("Alerts", () => {
       },
     });
     cy.get("div[class='example'] p").should("have.contain", "Congratulations");
+
+    // Apporach-2
+    cy.visit("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+    cy.get("div[class='example'] p").should("have.contain", "Congratulations");
   });
 });
