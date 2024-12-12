@@ -51,4 +51,14 @@ describe("Alerts", () => {
     // cy.on("window:confirm", () => false); //cancle
     cy.get("#result").should("have.text", "You entered: welcome");
   });
+  //4) Authenticated Alert
+  it.only("Js Authentication", () => {
+    //Apporach - 1;
+    cy.visit("https://the-internet.herokuapp.com/basic_auth", {
+      auth: {
+        username: "admin",
+        password: "admin",
+      },
+    });
+  });
 });
