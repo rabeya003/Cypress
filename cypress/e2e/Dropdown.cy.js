@@ -19,5 +19,7 @@ describe("handle dropdown", () => {
   it("Dunamic dropdown", () => {
     cy.visit("https://www.google.com/");
     cy.get("#APjFqb").type("cypress automation");
+    cy.wait(3000);
+    cy.get("div.wM6W7d>span").should("have.length", 13);
   });
 });
