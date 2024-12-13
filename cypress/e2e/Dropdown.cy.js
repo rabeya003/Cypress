@@ -16,4 +16,8 @@ describe("handle dropdown", () => {
     cy.get("#searchInput").type("Delhi");
     cy.get(".suggestion-title").contains("Delhi University").click();
   });
+  it("Dunamic dropdown", () => {
+    cy.visit("https://www.google.com/");
+    cy.get("#APjFqb").type("cypress automation");
+  });
 });
