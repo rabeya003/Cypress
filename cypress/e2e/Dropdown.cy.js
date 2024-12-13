@@ -11,4 +11,9 @@ describe("handle dropdown", () => {
     cy.get(".select2-search__field").type("Italy").type("{enter}");
     cy.get("#select2-billing_country-container").should("have.text", "Italy");
   });
+  it("Auto suggested Dropdown", () => {
+    cy.visit("https://www.wikipedia.org/");
+    cy.get("#searchInput").type("Delhi");
+    cy.get(".suggestion-title").contains("Delhi University").click();
+  });
 });
